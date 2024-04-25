@@ -16,14 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
- 
- 
+ int
+ float
+ bool
+ double
+ char
+ unsigned int
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -64,10 +62,30 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    int age = 3;
+    int score = 100;
 
+    float temperature = 20.0f;
+    float distance = 1000.056f;
+    float height = 30.6f;
+
+    bool isOrganic = false;
+    bool unlocked = true;
+    bool error = false;
+
+    double weight = 63.7;
+    double pressure = 11.02;
+    double speed = 42.0;
+
+    char grade = 'A';
+    char symbol = '!';
+    char initial = 'G';
+
+    unsigned int population = 400000;
+    unsigned int area = 111;
+    unsigned int brightness = 255;
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, age, score, temperature, distance, height, isOrganic, unlocked, error, weight, pressure, speed, grade, symbol, initial, population, area, brightness); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -84,42 +102,87 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+void printSingleCharacter(char character)
+{
+    ignoreUnused(character);
+}
 
 /*
  2)
  */
+double calculateBMI(double weight, double height)
+{
+    ignoreUnused(weight, height);
+    return {};
+}
 
 /*
  3)
  */
+void setTimerParameters(float seconds, bool repeat = false)
+{
+    ignoreUnused(seconds, repeat);
+}
 
 /*
  4)
  */
+int findMin(int a, int b, int c)
+{
+    ignoreUnused(a, b, c);
+    return {};
+}
 
 /*
  5)
  */
+bool checkPrime(int number)
+{
+    ignoreUnused(number);
+    return {};
+}
 
 /*
  6)
  */
+void drawCircle(float centerX, float centerY, float radius)
+{
+    ignoreUnused(centerX, centerY, radius);
+}
 
 /*
  7)
  */
+float computeProfit(float revenue, float costs, float interest = 0.06f)
+{
+    ignoreUnused(revenue, costs, interest);
+    return {};
+}
 
 /*
  8)
  */
+void setThermostat(float newTemp)
+{
+    ignoreUnused(newTemp);
+}
 
 /*
  9)
  */
+double calculateRequiredSpeed(double elapsedDistance, double timeRemaining)
+{
+    ignoreUnused(elapsedDistance, timeRemaining);
+    return {};
+}
 
 /*
  10)
  */
+void configureSynthVoices(unsigned int numVoices)
+{
+    ignoreUnused(numVoices);
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -141,27 +204,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    printSingleCharacter('A');
     //2)
-    
+    auto bmi = calculateBMI(65.0, 1.75);
     //3)
-    
+    setTimerParameters(120.0f, true);
     //4)
-    
+    auto minVal = findMin(5, 10, 2);
     //5)
-    
+    auto isPrime = checkPrime(11);
     //6)
-    
+    drawCircle(5.0f, 5.0f, 3.0f);
     //7)
-    
+    auto profit = computeProfit(500000.0f, 100.0f);
     //8)
-    
+    setThermostat(22.5f);
     //9)
-    
+    auto requiredSpeed = calculateRequiredSpeed(100.0, 11.5);
     //10)
+    configureSynthVoices(32);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, bmi, minVal, isPrime, profit, requiredSpeed);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
